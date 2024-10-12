@@ -1,4 +1,4 @@
-# 在 CentOS 7 上安装 Redis
+# 在 RHEL 安装 Redis
 
 ```bash
 # 下载epel仓库

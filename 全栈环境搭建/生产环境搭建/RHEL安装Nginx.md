@@ -1,24 +1,24 @@
-# Centos7 Nginx 安装教程
+# RHEL 安装 Nginx
 
 [Nginx 官网](https://nginx.org/en/download.html)
 
 ## 如需 HTTPS,请先安装 OpenSSL
 
-[OpenSSL 安装教程](CentOS安装OpenSSL.md)
+yum install openssl openssl-devel -y
 
 ## 安装教程
 
 ```bash
 # 依赖安装
-yum install wget gcc gcc-c++ autoconf automake zlib zlib-devel pcre pcre-devel -y
+yum install wget gcc gcc-c++ autoconf automake zlib zlib-devel pcre pcre-devel openssl openssl-devel -y
 # 软件包下载
-wget https://nginx.org/download/nginx-1.14.0.tar.gz
+wget https://nginx.org/download/nginx-1.26.2.tar.gz
 # 解压
-tar -zxvf nginx-1.14.0.tar.gz
+tar -zxvf nginx-1.26.2.tar.gz
 # 进入解压目录
-cd nginx-1.14.0
+cd nginx-1.26.2
 # 编译
-./configure --prefix=/root/software/nginx --prefix=/root/software/nginx --with-http_stub_status_module --with-http_gzip_static_module --with-http_realip_module --with-http_sub_module --with-http_ssl_module
+./configure --prefix=/root/software/nginx --with-http_stub_status_module --with-http_gzip_static_module --with-http_realip_module --with-http_sub_module --with-http_ssl_module
 # 安装
 make && make install
 ```

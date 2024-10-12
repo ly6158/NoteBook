@@ -1,4 +1,4 @@
-# CentOS 常用命令
+# RHEL 常用命令
 
 ```bash
 # SSH记住登录凭证
