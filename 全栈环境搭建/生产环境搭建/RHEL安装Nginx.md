@@ -2,15 +2,11 @@
 
 [Nginx 官网](https://nginx.org/en/download.html)
 
-## 如需 HTTPS,请先安装 OpenSSL
-
-yum install openssl openssl-devel -y
-
 ## 安装教程
 
 ```bash
 # 依赖安装
-yum install wget gcc gcc-c++ autoconf automake zlib zlib-devel pcre pcre-devel openssl openssl-devel -y
+yum install wget openssl openssl-devel -y
 # 软件包下载
 wget https://nginx.org/download/nginx-1.26.2.tar.gz
 # 解压

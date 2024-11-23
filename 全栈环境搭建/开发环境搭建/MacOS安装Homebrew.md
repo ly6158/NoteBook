@@ -2,7 +2,7 @@
 
 ## 1. 有梯子安装
 
-- 浏览器打开 https://raw.githubusercontent.com/Homebrew/install/master/install.sh
+- 浏览器打开 [https://raw.githubusercontent.com/Homebrew/install/master/install.sh](https://raw.githubusercontent.com/Homebrew/install/master/install.sh)
 - 保存为 brew.sh 并替换文件内源地址
   - HOMEBREW_BREW_DEFAULT_GIT_REMOTE="git://mirrors.ustc.edu.cn/brew.git"
   - HOMEBREW_CORE_DEFAULT_GIT_REMOTE="git://mirrors.ustc.edu.cn/homebrew-core.git"
@@ -20,5 +20,5 @@
 
 ## 参考链接
 
-- https://zhuanlan.zhihu.com/p/89941189
-- https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/
+- [https://zhuanlan.zhihu.com/p/89941189](https://zhuanlan.zhihu.com/p/89941189)
+- [https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)

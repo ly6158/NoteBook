@@ -9,16 +9,20 @@
 > ./maven-path/conf/setting.xml
 
 ```xml
-<!-- 阿里云镜像 -->
-<mirror>
-  <id>alimaven</id>
-  <name>aliyun maven</name>
-  <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-  <mirrorOf>central</mirrorOf>
-</mirror>
+<settings>
+  <!-- 修改本地仓库路径 -->
+  <localRepository>${user.home}/workspace/dependency/maven-repository</localRepository>
 
-<!-- 修改本地仓库路径 -->
-<localRepository>/.../maven-repository</localRepository>
+  <mirrors>
+      <!-- 阿里云镜像 -->
+    <mirror>
+      <id>alimaven</id>
+      <name>aliyun maven</name>
+      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+  </mirrors>
+</settings>
 ```
 
 ```bash
