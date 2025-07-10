@@ -14,7 +14,7 @@ tar -zxvf nginx-1.26.2.tar.gz
 # 进入解压目录
 cd nginx-1.26.2
 # 编译
-./configure --prefix=/root/software/nginx --with-http_stub_status_module --with-http_gzip_static_module --with-http_realip_module --with-http_sub_module --with-http_ssl_module
+./configure --prefix=/root/software/nginx --with-http_stub_status_module --with-http_gzip_static_module --with-http_realip_module --with-http_sub_module --with-http_ssl_module --with-http_v2_module
 # 安装
 make && make install
 ```
