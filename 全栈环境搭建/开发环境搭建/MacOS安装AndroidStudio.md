@@ -11,8 +11,6 @@
 ```bash
 # 打开用户终端配置文件 (.bash_profile/.zshrc)
 export ANDROID_HOME=/SDK下载路径
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/emulator
 ```
