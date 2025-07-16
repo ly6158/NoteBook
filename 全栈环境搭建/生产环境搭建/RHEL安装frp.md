@@ -20,10 +20,10 @@ After=network.target
 
 [Service]
 Type=simple
-User=nobody
+User=root
 Restart=on-failure
 RestartSec=5s
-ExecStart=/root/software/frp/frps -c /root/software/frp/frps.toml
+ExecStart=/root/software/frp/frpc -c /root/software/frp/frpc.toml
 
 [Install]
 WantedBy=multi-user.target
@@ -33,3 +33,6 @@ sudo systemctl enable frp
 sudo systemctl start frp
 sudo systemctl status frp
 sudo systemctl restart frp
+sudo systemctl stop frp
+
+journalctl -u frp.service
