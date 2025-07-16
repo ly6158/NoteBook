@@ -20,4 +20,8 @@ mvn install:install-file -DgroupId=com.oracle -DartifactId=jdbc8 -Dversion=12.2.
 ```bash
 # maven java项目打包(需配合配置文件)
 mvn clean install
+> 添加 -U 参数强制 Maven 更新快照依赖
+
+# 启动 spring boot 项目
+mvn spring-boot:run
 ```
