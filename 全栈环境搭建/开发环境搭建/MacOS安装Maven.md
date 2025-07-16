@@ -14,12 +14,18 @@
   <localRepository>${user.home}/workspace/dependency/maven-repository</localRepository>
 
   <mirrors>
-      <!-- 阿里云镜像 -->
+    <!-- 阿里云镜像 -->
     <mirror>
       <id>alimaven</id>
-      <name>aliyun maven</name>
+      <name>阿里云</name>
       <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
       <mirrorOf>central</mirrorOf>
+    </mirror>
+    <mirror>     
+      <id>nexus-tencentyun</id>
+      <mirrorOf>*</mirrorOf>
+      <name>腾讯云</name>
+      <url>http://mirrors.cloud.tencent.com/nexus/repository/maven-public/</url>
     </mirror>
   </mirrors>
 </settings>
