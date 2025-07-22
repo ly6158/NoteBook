@@ -36,3 +36,5 @@ sudo systemctl restart frp
 sudo systemctl stop frp
 
 journalctl -u frp.service
+
+sudo setenforce 0  # 设置为 permissive 模式（仅警告，不拦截）
