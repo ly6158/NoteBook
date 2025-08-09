@@ -6,6 +6,9 @@
 
 ```bash
 # 依赖安装
+sudo yum groupinstall "Development Tools" -y
+sudo yum install -y pcre pcre-devel
+
 yum install wget openssl openssl-devel -y
 # 软件包下载
 wget https://nginx.org/download/nginx-1.26.2.tar.gz
