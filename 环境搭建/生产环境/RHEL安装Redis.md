@@ -1,6 +1,12 @@
 # 在 RHEL 安装 Redis
 
 ```bash
+# 防火墙放行6379端口
+sudo firewall-cmd --zone=public --add-port=6379/tcp --permanent
+
+# 重载防火墙
+sudo firewall-cmd --reload
+
 # 安装 Redis
 yum install redis -y
 
