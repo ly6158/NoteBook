@@ -7,29 +7,23 @@ sudo firewall-cmd --zone=public --add-port=3306/tcp --permanent
 # 重载防火墙
 sudo firewall-cmd --reload
 
-# 下载mysql repo源
-wget http://repo.mysql.com/mysql80-community-release-el7-3.noarch.rpm
-
 # 更新GPG密钥
-rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
+rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2023
+
+# 下载 Repo 源
+sudo dnf install -y https://dev.mysql.com/get/mysql80-community-release-el9-3.noarch.rpm
 
 # 安装包
-sudo rpm -ivh mysql80-community-release-el7-3.noarch.rpm
-
-# 使用yum安装mysql
-sudo yum install mysql-server --nogpgcheck -y
+sudo dnf install -y mysql-server
 
 # 将mysql设为开机启动项
-systemctl enable mysqld.service
+systemctl enable mysqld
 
 # 启动服务
-systemctl start mysqld.service
-
-# 初始化Mysql
-mysqld --initialize
+systemctl start mysqld
 
 # 查看MySQL初始默认密码
-grep 'temporary password' /var/log/mysqld.log
+sudo grep 'temporary password' /var/log/mysqld.log
 
 # 查看是否启动MySQL服务
 ps -ef|grep mysql
