@@ -19,7 +19,7 @@ sudo systemctl enable --now docker
 sudo docker --version
 ```
 
-## 配置代理
+## 配置加速节点
 
 > /etc/docker/daemon.json
 
@@ -43,4 +43,25 @@ ping -c 3 ccr.ccs.tencentyun.com
 ```bash
 sudo systemctl daemon-reload
 sudo systemctl restart docker
+```
+
+## 配置代理
+
+> /etc/systemd/system/docker.service.d/http-proxy.conf
+
+```conf
+[Service]
+Environment="HTTP_PROXY=http://192.168.8.119:7897"
+Environment="HTTPS_PROXY=http://192.168.8.119:7897"
+```
+
+> /etc/docker/daemon.json
+
+```json
+{
+  "proxies": {
+    "http-proxy": "http://192.168.8.119:7897",
+    "https-proxy": "http://192.168.8.119:7897"
+  }
+}
 ```
