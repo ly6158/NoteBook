@@ -83,6 +83,33 @@ webServer.user = "用户名"
 webServer.password = "密码"
 ```
 
+## 客户端连通性测试
+
+```bash
+#!/bin/bash
+
+URL="http://127.0.0.1:7001/"
+SERVICE="frp"
+
+# 日志函数（可选）
+log() {
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - $1"
+}
+
+while true; do
+    # 使用 curl 检测 URL 是否可访问（只接受 HTTP 2xx 状态码为成功）
+    if ! curl -sf --max-time 30 --connect-timeout 5 "$URL" >/dev/null 2>&1; then
+        systemctl restart "$SERVICE"
+        log "FRP 服务重启成功"
+    else
+        log "FRP 服务正常"
+    fi
+
+    # 等待 2 分钟后再次检测
+    sleep 120
+done
+```
+
 ## 其他
 
 ```bash
